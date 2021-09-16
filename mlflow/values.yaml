@@ -46,7 +46,8 @@ ingress:
     kubernetes.io/ingress.class: nginx
   hosts:
     - host: kev-test4350.gambit-sandbox.domino.tech
-      paths: ["/mlflow/"]
+      paths:
+      - path: "/mlflow/"
   tls: []
 
 resources:
