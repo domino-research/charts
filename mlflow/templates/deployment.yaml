@@ -37,15 +37,16 @@ spec:
           ports:
             - name: http
               containerPort: 5000
+              port: 80
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /
-              port: http
+              port: 5000
           readinessProbe:
             httpGet:
               path: /
-              port: http
+              port: 5000
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
