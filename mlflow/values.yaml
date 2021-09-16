@@ -49,7 +49,7 @@ ingress:
   hosts:
     - host: kev-test4350.gambit-sandbox.domino.tech
       paths:
-      - path: "/mlflow/"
+      - path: "/mlflow"
   tls: []
 
 resources:
