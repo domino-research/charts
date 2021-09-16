@@ -8,7 +8,15 @@ spec:
   egress:
   - {}
   ingress:
-  - {}
+  - from:
+    - podSelector:
+        matchLabels:
+          app.kubernetes.io/component: controller
+          app.kubernetes.io/instance: nginx-ingress
+          app.kubernetes.io/name: nginx-ingress
+    ports:
+    - protocol: TCP
+      port: 5000
   podSelector:
     matchLabels:
       {{- include "mlflow.selectorLabels" . | nindent 6 }}
