@@ -1,0 +1,6 @@
+apiVersion: v2
+name: minio
+description: Deploy minio on Domino
+type: application
+version: 0.1.0
+appVersion: "RELEASE.2021-10-08T23-58-24Z"

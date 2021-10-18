@@ -1,0 +1,45 @@
+replicaCount: 1
+
+image:
+  repository: minio/minio
+  pullPolicy: IfNotPresent
+  tag: "RELEASE.2021-10-08T23-58-24Z"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 1Gi
+  requests:
+    cpu: 500m
+    memory: 1Gi
+
+nodeSelector:
+  dominodatalab.com/domino-node: "true"
+  dominodatalab.com/node-pool: "platform"
+
+tolerations: []
+
+affinity: {}
+
+storage:
+  className: dominodisk
+  size: 256Gi
